@@ -19,38 +19,34 @@
 
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-interface IRows{
-  id:number,
-  name:string,
-  handle:string
+import { Component, Vue } from "vue-property-decorator";
+interface IRows {
+  id: number;
+  name: string;
+  handle: string;
 }
 
 @Component({
-  components: {
-   
-  },
+  components: {},
 })
 export default class Home extends Vue {
- 
-opened:[]= []
+  opened: string[] = [];
 
-  rows:IRows[]= [
-        { id: 1, name: "Bill", handle: "bill" },
-        { id: 2, name: "Bob", handle: "bob" },
-        { id: 3, name: "Jim", handle: "jim" },
-        { id: 4, name: "Leroy", handle: "leroy" },
-      ]
-
-   toggle(id:number):void {
-     
-      const index = this.opened.indexOf(id);
-      if (index > -1) {
-        this.opened.splice(index, 1);
-      } else {
-        this.opened.push(id);
-      }
-}
+  rows: Array<IRows> = [
+    { id: 1, name: "Bill", handle: "bill" },
+    { id: 2, name: "Bob", handle: "bob" },
+    { id: 3, name: "Jim", handle: "jim" },
+    { id: 4, name: "Leroy", handle: "leroy" },
+  ];
+  /* eslint-disable */
+  toggle(id: any): void {
+    const index = this.opened.indexOf(id);
+    if (index > -1) {
+      this.opened.splice(index, 1);
+    } else {
+      this.opened.push(id);
+    }
+  }
 }
 </script>
 
