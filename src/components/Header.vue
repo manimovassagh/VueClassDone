@@ -1,18 +1,19 @@
 <template>
   <div class="home">
-  <div>Home Page</div>
-  <Header/>
+  <div>{{name}}</div>
   </div>
 </template>
 
 <script lang="ts">
-import Header from '@/components/Header.vue';
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
   components: {
-   Header
+   
   },
 })
-export default class Home extends Vue {}
+export default class Header extends Vue {
+  name="mani"
+}
 </script>
+
