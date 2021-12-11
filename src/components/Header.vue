@@ -6,7 +6,7 @@
 
 <script lang="ts">
 
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Provide, Vue } from 'vue-property-decorator';
 
 
 @Component({
@@ -16,6 +16,12 @@ import { Component, Vue } from 'vue-property-decorator';
 })
 export default class Header extends Vue {
   name="mani"
+  @Provide  ('a')  providedValue = 'The value';
+
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  mounted() {
+    console.log(this.providedValue);
+  }
 }
 </script>
 
